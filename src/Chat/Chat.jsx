@@ -4,6 +4,11 @@ import Messages from "../Messages/Messages";
 import MessageInput from '../MessageInput/MessageInput';
 
 const Chat = ({ messages, currentMember, onSendMessage, members }) => {
+    console.log(messages);
+    console.log(currentMember);
+    console.log(onSendMessage);
+    console.log(members);
+
     return <>
         <div className="container">
             <div className="row clearfix">
@@ -30,10 +35,11 @@ const Chat = ({ messages, currentMember, onSendMessage, members }) => {
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <a href="#" data-toggle="modal" data-target="#view_info">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar"/>
+                                            <img src={`https://api.dicebear.com/5.x/avataaars/svg?seed=${currentMember.username}`} alt={`${currentMember.username} avatar`} />
+
                                         </a>
                                         <div className="chat-about">
-                                            <h6 className="m-b-0">Aiden Chavez</h6>
+                                            <h6 className="m-b-0">{currentMember.username}</h6>
                                             <small>Last seen: 2 hours ago</small>
                                         </div>
                                     </div>
