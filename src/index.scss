@@ -114,7 +114,26 @@ body {
   border-bottom: 2px solid #fff;
   margin-right: 10px;
   display: flex;
-  flex-direction: column-reverse; 
+  flex-direction: column-reverse;
+}
+
+.people-list-mobile {
+  padding: 10px 5px;
+  margin-right: 10px;
+  display: flex;
+  position: absolute;
+  max-width: 85%;
+  overflow: scroll;
+  background: white;
+  margin-left: 15px;
+}
+
+.chat-people-mobile{
+  border: 2px solid #f4f7f6;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 2.5px 10px;
+  margin: 2.5px;
 }
 
 .chat-history ul {
@@ -151,7 +170,6 @@ body {
   font-size: 16px;
   border-radius: 7px;
   display: inline-block;
-  position: relative
 }
 
 .chat-history .message:after {
@@ -216,5 +234,9 @@ body {
 @media only screen and (max-width: 767px) {
   .chat {
     border-left: unset;
+  }
+  .chat-history{
+    border-bottom: unset;
+    padding-top: 60px;
   }
 }

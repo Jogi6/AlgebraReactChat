@@ -50,6 +50,18 @@ const Chat = ({ messages, currentMember, onSendMessage, members }) => {
                             </div>
                         </div>
                     </div>
+                    <div className='row d-block d-md-none'>
+                        <div className='people-list-mobile'>
+                            {members.length === 0 ? (
+                                    <div>No members found</div>
+                                ) : (members.map(people => (
+                                    <div className='chat-people-mobile' style={{ backgroundColor: people.clientData.color }}>
+                                        <span>{people.clientData.username}</span>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </div>
                     <div className='row min-vh-100 vh-100 chat-history overflow-auto'>
                         <Messages messages={messages} member={currentMember} />
                     </div>
