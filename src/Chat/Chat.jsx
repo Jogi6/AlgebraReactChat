@@ -4,10 +4,6 @@ import Messages from "../Messages/Messages";
 import MessageInput from '../MessageInput/MessageInput';
 
 const Chat = ({ messages, currentMember, onSendMessage, members }) => {
-    console.log(messages);
-    console.log(currentMember);
-    console.log(onSendMessage);
-    console.log(members);
 
     return <>
         <div className="container min-vh-100">
