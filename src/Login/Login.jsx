@@ -6,17 +6,20 @@ class Login extends Component {
     username: "",
   };
 
+  // Generira nasumicni jusername koristeci 'randomName' fumnkciju importanu iz '../Utility/Utility'
   handleRandomNameClick = () => {
     const randomUsername = randomName();
+    // seta state sa generiranim usernameom
     this.setState({ username: randomUsername });
   };
 
-
+  // Poziva se kada je forma submitana, poziva 'onLogin' funkciju koja je poslana kao prop, i šalje 'username' iz statea
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onLogin(this.state.username);
   };
 
+  // Koristi se kako bi spremili 'username' koji je upisao korisnik u state
   handleChange = (event) => {
     this.setState({ username: event.target.value });
   };

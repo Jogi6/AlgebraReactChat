@@ -7,10 +7,10 @@ body {
   padding: 20px;
 }
 .min-vh-100{
-  min-height: calc(100vh - 190px) !important;
+  min-height: calc(100dvh - 190px) !important;
 }
 .vh-100 {
-  height: calc(100vh - 190px) !important;
+  height: calc(100dvh - 190px) !important;
 }
 .chat-box{
   background: #fff;
@@ -238,5 +238,11 @@ body {
   .chat-history{
     border-bottom: unset;
     padding-top: 60px;
+  }
+  .btn-outline-secondary{
+    height: 68px;
+  }
+  .btn-outline-success{
+    height: 68px;
   }
 }
