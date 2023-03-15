@@ -20,7 +20,7 @@ class App extends Component {
 
   // 'handleLogin' funkcija je pozvana kada korisnik upiše ili generira random 'username' i stisne "login" gumb u 'Login' komponenti.
   handleLogin = (username) => {
-    // Inicijalizira drone objekt sa novim 'member' objektom kojem je dodan novi 'username' pomocu spred operatora
+    // Inicijalizira drone objekt sa novim 'member' objektom kojem je dodan novi 'username' pomocu spred operatora iz argumenta callback funkcije
     const member = { ...this.state.member, username };
     // Kreira se nova instanca Scaledrone servisa.
     this.drone = new window.Scaledrone("tHjsnInOpXhV11mZ", { // U zagradam je Scaledrone privati 'id' Scaledrone kanala
@@ -84,8 +84,10 @@ class App extends Component {
   // prikazuje chat komponentu
   render() {
     return (
+      // uvjetno renderiranje komponenata, izraz se sastoji od dva JSX elementa, Short-circuit evaluacija 
       <div className="App">
         {!this.state.connected && (
+          // 'onLogin' prop je postavljen na handleLogin funkciju koja kao argument vraca 'username'
           <Login onLogin={this.handleLogin} />
         )}
         {this.state.connected && (

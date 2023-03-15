@@ -15,7 +15,7 @@ class Login extends Component {
 
   // Poziva se kada je forma submitana, poziva 'onLogin' funkciju koja je poslana kao prop, i šalje 'username' iz statea
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // kako ime kaže sprijeci zadano ponašanje, tako da se forma ne submita na server i ne osvježi stranicu
     this.props.onLogin(this.state.username);
   };
 
